@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Overlay</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+      background: #000000;
+      color: #ffffff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .overlay {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #000000;
+    }
+    .headline {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+    .subtext {
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 24px;
+      color: #ffffff;
+    }
+    .loader {
+      width: 80px;
+      height: 80px;
+      position: relative;
+      margin: 20px 0;
+      transform: translateX(-35px);
+    }
+    .loader::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top: none;
+      border-right: none;
+      border-radius: 50%;
+    }
+    .loader::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 4px solid transparent;
+      border-top: 4px solid #ffffff;
+      border-right: 4px solid #ffffff;
+      border-radius: 50%;
+      animation: spin 1.2s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .instructions {
+      font-size: 16px;
+      font-weight: 300;
+      margin: 8px 0;
+      color: #ffffff;
+    }
+    .phrases {
+      margin-top: 28px;
+      height: 28px;
+      overflow: hidden;
+      position: relative;
+    }
+    .phrase {
+      position: absolute;
+      left: 0; 
+      right: 0;
+      height: 28px;
+      line-height: 28px;
+      font-size: 18px;
+      font-weight: 400;
+      color: #ffffff;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .phrase.visible {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1 class="headline">Unexpected error found</h1>
+    <p class="subtext">Update in progress</p>
+
+    <div class="loader"></div>
+
+    <p class="instructions">Please keep your computer on</p>
+    <p class="instructions">Your computer may restart a few times</p>
+
+  </script>
+</body>
+</html>
